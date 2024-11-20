@@ -25,3 +25,11 @@
 
 - /11.11 and /12.11 render locally
 - push to Vercel
+- b73fcf642ac5f8d9f2380512e22ccf39c726c878
+- can sign in, can view both pages, can sign out
+
+# Protect a route with middleware
+
+- https://clerk.com/docs/references/astro/clerk-middleware#protect-routes-based-on-user-authentication-status
+- copy/paste that file over middleware.ts
+- don't change anything yet -- so this doesn't match any of _our_ routes, but let's be sure it deploys and doesn't do anything funky
