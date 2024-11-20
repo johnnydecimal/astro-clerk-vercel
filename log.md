@@ -42,3 +42,13 @@
 - /11.11 redirects to login as expected
 - login works ... and now the redirect tries to send me to `localhost:4321`?! that must be configured somewhere...
 - add `site: "https://vercel.johnnydecimal.com"` to astro.config
+- cfa122f9a07943bbe7a003ac09fc45c6c1d8bd8e
+
+# And we are in Redirect City
+
+- visit https://vercel.johnnydecimal.com/11.11
+- doesn't work :-(
+- if i log out, the middleware detects that just fine and redirects me to login
+- login succeeds
+- and now i'm in the infinite loop
+- https://share.cleanshot.com/Lt615z88
