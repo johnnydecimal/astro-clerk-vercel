@@ -33,3 +33,6 @@
 - https://clerk.com/docs/references/astro/clerk-middleware#protect-routes-based-on-user-authentication-status
 - copy/paste that file over middleware.ts
 - don't change anything yet -- so this doesn't match any of _our_ routes, but let's be sure it deploys and doesn't do anything funky
+- 5b7b43ba3d8344956b146a84f2b454670cc68832
+- no change as expected. let's protect our route with:
+  - const isProtectedRoute = createRouteMatcher(["/11(.*)"]);
