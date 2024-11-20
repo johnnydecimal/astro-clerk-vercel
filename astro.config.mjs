@@ -9,7 +9,7 @@ export default defineConfig({
   site: "https://vercel.johnnydecimal.com",
   integrations: [clerk()],
   adapter: vercel({
-    edgeMiddleware: true,
+    // edgeMiddleware: true,
   }),
   output: "hybrid",
 });
