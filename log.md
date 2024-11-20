@@ -36,3 +36,9 @@
 - 5b7b43ba3d8344956b146a84f2b454670cc68832
 - no change as expected. let's protect our route with:
   - const isProtectedRoute = createRouteMatcher(["/11(.*)"]);
+- 45ef398c0c56a8836c1d40f19835c5713f285dc4
+- i'm not logged in
+- /12.11 renders as expected
+- /11.11 redirects to login as expected
+- login works ... and now the redirect tries to send me to `localhost:4321`?! that must be configured somewhere...
+- add `site: "https://vercel.johnnydecimal.com"` to astro.config
