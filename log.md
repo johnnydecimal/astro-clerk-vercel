@@ -16,4 +16,12 @@
 - add TS declarations
 - add src/layouts/SiteLayout.astro
 - wrap index.astro in SiteLayout
-- run locally
+- run locally; requests to `clerk.johnnydecimal.com` 400 because
+  - The Request HTTP Origin header must be equal to or a subdomain of the requesting URL.
+- deploy to Vercel; A-OK
+- e08dc23a732c66e0a8153a6066520c0d77cba7d3
+
+# Add a basic [id].astro route
+
+- /11.11 and /12.11 render locally
+- push to Vercel

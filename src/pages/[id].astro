@@ -1,0 +1,14 @@
+---
+export async function getStaticPaths() {
+  return [
+    { params: { id: "11.11" }, props: { title: "eleven-eleven" } },
+    { params: { id: "12.11" }, props: { title: "twelve-eleven" } },
+  ];
+}
+
+const { id } = Astro.params;
+const { title } = Astro.props;
+---
+
+<div>id: {id}</div>
+<div>title: {title}</div>
