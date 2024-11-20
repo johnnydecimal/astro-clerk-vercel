@@ -8,6 +8,8 @@ import vercel from "@astrojs/vercel/serverless";
 export default defineConfig({
   site: "https://vercel.johnnydecimal.com",
   integrations: [clerk()],
-  adapter: vercel(),
+  adapter: vercel({
+    edgeMiddleware: true,
+  }),
   output: "hybrid",
 });
