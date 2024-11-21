@@ -63,3 +63,9 @@
 - nice. let's commit
 - 6cd25011fe2248ef93974da423a76ec6bf07074e
 - now let's do some reading on what the boys sent you
+
+# Implement client-side auth
+
+- 8f4d5e3740ddfcb6d21aa4a9ca1177c257fac7da
+- meh i mean it _works_ but boy it's slow
+- try a deploy see how it is on Vercel

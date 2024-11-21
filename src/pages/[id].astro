@@ -36,6 +36,7 @@ console.log("userId", userId);
 
   $authStore.subscribe((auth) => {
     const loadingIndicator = document.getElementById("loading-indicator");
+    const pageContent = document.getElementById("page-content");
 
     if (auth.userId === undefined) {
       // Show loading indicator
