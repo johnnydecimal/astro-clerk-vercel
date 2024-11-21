@@ -33,24 +33,22 @@ console.log("userId", userId);
 
 <script>
   import { $authStore } from "@clerk/astro/client";
-  const { redirectToSignIn } = Astro.locals.auth();
 
   $authStore.subscribe((auth) => {
-    const loadingIndicator = document.getElementById("loading-indicator")!;
-    const pageContent = document.getElementById("page-content")!;
+    const loadingIndicator = document.getElementById("loading-indicator");
+    const pageContent = document.getElementById("page-content");
 
     if (auth.userId === undefined) {
       // Show loading indicator
-      // loadingIndicator.style.display = "block";
-      pageContent.style.display = "none";
+      loadingIndicator!.style.display = "block";
+      pageContent!.style.display = "none";
     } else if (auth.userId === null) {
       // Redirect to sign-in page for unauthenticated users
       window.location.href = "/sign-in";
-      return redirectToSignIn();
     } else {
       // Hide loading indicator and show page content
-      // loadingIndicator.style.display = "none";
-      pageContent.style.display = "block";
+      loadingIndicator!.style.display = "none";
+      pageContent!.style.display = "block";
     }
   });
 </script>

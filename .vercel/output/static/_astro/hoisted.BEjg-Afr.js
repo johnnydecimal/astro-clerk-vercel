@@ -1,0 +1,1 @@
+import{$ as t}from"./chunk-THYSZO52.CLstdkOK.js";t.subscribe(e=>{const n=document.getElementById("loading-indicator"),o=document.getElementById("page-content");e.userId===void 0?(n.style.display="block",o.style.display="none"):e.userId===null?window.location.href="/sign-in":(n.style.display="none",o.style.display="block")});
