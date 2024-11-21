@@ -8,7 +8,46 @@ export async function getStaticPaths() {
 
 const { id } = Astro.params;
 const { title } = Astro.props;
+
+console.log("Astro.locals:", Astro.locals);
+
+const { userId, redirectToSignIn } = Astro.locals.auth();
+
+console.log("userId", userId);
 ---
 
-<div>id: {id}</div>
-<div>title: {title}</div>
+<div id="loading-indicator" style="display: none;">
+  Loading... 🐝 Please wait
+</div>
+<div id="page-content" style="display: none;">
+  <div>id: {id}</div>
+  <div>title: {title}</div>
+
+  <div>
+    <a href="/11.11">11.11</a>
+  </div>
+  <div>
+    <a href="/12.11">12.11</a>
+  </div>
+</div>
+
+<script>
+  import { $authStore } from "@clerk/astro/client";
+
+  $authStore.subscribe((auth) => {
+    const loadingIndicator = document.getElementById("loading-indicator");
+
+    if (auth.userId === undefined) {
+      // Show loading indicator
+      // loadingIndicator.style.display = "block";
+      pageContent.style.display = "none";
+    } else if (auth.userId === null) {
+      // Redirect to sign-in page for unauthenticated users
+      window.location.href = "/sign-in";
+    } else {
+      // Hide loading indicator and show page content
+      // loadingIndicator.style.display = "none";
+      pageContent.style.display = "block";
+    }
+  });
+</script>

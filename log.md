@@ -60,3 +60,6 @@
 - so let's rip out that middleware -- leave the file there as we might protect a SSR route in the future?
 - replace our env vars with the dev versions, and start using the dev instance
 - in the dev instance, configure the host to be http://localhost:8888
+- nice. let's commit
+- 6cd25011fe2248ef93974da423a76ec6bf07074e
+- now let's do some reading on what the boys sent you
