@@ -11,7 +11,7 @@ const { title } = Astro.props;
 
 console.log("Astro.locals:", Astro.locals);
 
-const { userId, redirectToSignIn } = Astro.locals.auth();
+const { userId } = Astro.locals.auth();
 
 console.log("userId", userId);
 ---
@@ -33,10 +33,11 @@ console.log("userId", userId);
 
 <script>
   import { $authStore } from "@clerk/astro/client";
+  const { redirectToSignIn } = Astro.locals.auth();
 
   $authStore.subscribe((auth) => {
-    const loadingIndicator = document.getElementById("loading-indicator");
-    const pageContent = document.getElementById("page-content");
+    const loadingIndicator = document.getElementById("loading-indicator")!;
+    const pageContent = document.getElementById("page-content")!;
 
     if (auth.userId === undefined) {
       // Show loading indicator
@@ -45,6 +46,7 @@ console.log("userId", userId);
     } else if (auth.userId === null) {
       // Redirect to sign-in page for unauthenticated users
       window.location.href = "/sign-in";
+      return redirectToSignIn();
     } else {
       // Hide loading indicator and show page content
       // loadingIndicator.style.display = "none";

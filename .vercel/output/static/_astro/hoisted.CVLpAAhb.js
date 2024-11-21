@@ -1,0 +1,1 @@
+import{$ as t}from"./chunk-THYSZO52.CLstdkOK.js";const{redirectToSignIn:o}=Astro.locals.auth();t.subscribe(e=>{document.getElementById("loading-indicator");const n=document.getElementById("page-content");if(e.userId===void 0)n.style.display="none";else{if(e.userId===null)return window.location.href="/sign-in",o();n.style.display="block"}});

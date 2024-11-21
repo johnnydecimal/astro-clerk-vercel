@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang="en"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator" content="Astro v4.16.13"><script type="module" src="/_astro/hoisted.uhiSeW6Q.js"></script>
+<script type="module" src="/_astro/page.XkQ7oypv.js"></script><script id="__CLERK_ASTRO_DATA__" type="application/json">{"sessionClaims":null,"sessionId":null,"userId":null,"actor":null,"orgId":null,"orgRole":null,"orgSlug":null,"orgPermissions":null,"__experimental_factorVerificationAge":null}</script>
+<script id="__CLERK_ASTRO_SAFE_VARS__" type="application/json">{"isSatellite":false}</script>
+
+  <script src="https://lenient-hound-82.clerk.accounts.dev/npm/@clerk/clerk-js@5/dist/clerk.browser.js"
+  data-clerk-js-script
+  async
+  crossOrigin='anonymous'
+  data-clerk-publishable-key="pk_test_bGVuaWVudC1ob3VuZC04Mi5jbGVyay5hY2NvdW50cy5kZXYk"
+  
+  
+  ></script>
+</head> <body> <header> <h1>SiteLayout.astro title</h1> <nav> <clerk-signed-out hidden>   <button data-clerk-unstyled-id="a8VT1XEzRC">Sign in</button><script>(function(){const signInOptions = {};
+const mode = "modal";
+const safeId = "a8VT1XEzRC";
+
+  const btn = document.querySelector(`[data-clerk-unstyled-id="${safeId}"]`);
+
+  btn.addEventListener("click", () => {
+    const clerk = window.Clerk
+
+    if (mode === 'modal') {
+      return clerk.openSignIn(signInOptions);
+    }
+
+    return clerk.redirectToSignIn({
+      ...signInOptions,
+      signInFallbackRedirectUrl: signInOptions.fallbackRedirectUrl,
+      signInForceRedirectUrl: signInOptions.forceRedirectUrl,
+    });
+  });
+})();</script>   </clerk-signed-out>  <clerk-signed-in hidden>   <div data-clerk-id="clerk-user-button-H4QFvPQUWC"></div> <script>(function(){const props = {};
+const component = "user-button";
+const safeId = "H4QFvPQUWC";
+
+  /**
+   * Store the id and the props for the Astro component in order to mount the correct UI component once clerk is loaded.
+   * The above is handled by `mountAllClerkAstroJSComponents`.
+   */
+  const setOrCreatePropMap = ({ category, id, props }) => {
+    if (!window.__astro_clerk_component_props) {
+      window.__astro_clerk_component_props = new Map();
+    }
+
+    if (!window.__astro_clerk_component_props.has(category)) {
+      const _ = new Map();
+      _.set(id, props);
+      window.__astro_clerk_component_props.set(category, _);
+    }
+
+    window.__astro_clerk_component_props.get(category)?.set(id, props);
+  };
+
+  setOrCreatePropMap({
+    category: component,
+    id: `clerk-${component}-${safeId}`,
+    props,
+  });
+})();</script>    </clerk-signed-in>  </nav> </header> <article>  <p>Sign in to try Clerk out!</p>  </article> </body></html>
