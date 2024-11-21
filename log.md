@@ -52,3 +52,11 @@
 - login succeeds
 - and now i'm in the infinite loop
 - https://share.cleanshot.com/Lt615z88
+
+# And this is why!
+
+- https://discord.com/channels/856971667393609759/1308668362905223239/1308945694614229013
+- unsupported with prerendered pages
+- so let's rip out that middleware -- leave the file there as we might protect a SSR route in the future?
+- replace our env vars with the dev versions, and start using the dev instance
+- in the dev instance, configure the host to be http://localhost:8888
